@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-client-deployment
+  labels:
+    app: sample-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-client
+  template:
+    metadata:
+      labels:
+        app : sample-client  
+    spec:
+      containers:
+        - name: sample-client
+          image: selcuks/sample-client:v1
+          ports:
+          - containerPort: 80

@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: sample-client
-          image: selcuks/sample-client:v1
+          image: selcuks/sample-client:latest
           ports:
           - containerPort: 80

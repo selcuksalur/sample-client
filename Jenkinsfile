@@ -16,7 +16,7 @@ pipeline {
         stage("Push image") {
             steps {
                 script {
-                    docker.withRegistry('', 'dockerhub') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                             app.push("latest")
                             app.push("${env.BUILD_ID}")
                     }
